@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="container mt-3 ">
+ <h4>Update Record</h4>
+ <hr>
+ <form action="/update/{{Student.id}}" method="POST">
+    {% csrf_token %}
+
+  <div class="form-group">
+      <label for="">ID</label>
+      <input type="text" name="sid" value="{{Student.sid}}" class="form-control">
+  </div>
+  <div class="form-group">
+    <label for="">Name</label>
+    <input type="text" name="sname" value="{{Student.sname}}" class="form-control">
+ </div>
+ <div class="form-group">
+    <label for="">Contact</label>
+    <input type="text" name="scontact" value="{{Student.scontact}}"  class="form-control">
+ </div>
+ <div class="form-group">
+    <button class="btn btn-primary" type="submit">Update Record</button>
+     <a href="" class="btn btn-info">Show Details</a>
+ 
+   </div>
+
+
+
+ </form>
+</div>
+
+
+{% endblock %}
